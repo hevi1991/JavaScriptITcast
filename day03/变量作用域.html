@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>变量作用域</title>
+    <script>
+        //变量作用域:变量在什么位置可以使用
+        
+        //1.全局作用域
+        var name = "Peter";
+        
+        function func (){
+            //在script标签内也可以使用，所以name为全局作用域
+            console.log(name);
+        }
+        func();
+        
+        //2.局部作用域
+        function func (){
+            var age = 18;
+            //在script标签内也可以使用，所以name为全局作用域
+            console.log(age);
+        }
+//        console.log(age);//函数内部的变量，函数外不可使用,变量作用域.html:25 Uncaught ReferenceError: age is not defined
+        
+        //3.若在函数内部不使用var声明一个变量，则这个变量将是全局变量
+        function func (){
+            a = 99;
+            var age = 18;
+            //在script标签内也可以使用，所以name为全局作用域
+            console.log(age);
+        }
+        console.log(a);
+        //4.JavaScript中没有块级作用域
+        //4.1什么是块
+        {
+            //代码块
+            //强类型语言，在代码块中声明的变量，外面是使用不到的。但是在JavaScript中，外部可以使用
+            var bcd = 90;
+        }
+        console.log(bcd);
+        //4.2例子
+        if (true) {
+            var cde = 19;
+        }
+        console.log(cde);
+        //4.3例子
+        for (var i = 0 ; i < 10 ; i++){
+            
+        }
+        console.log(i);
+        
+        
+    </script>
+    
+</head>
+
+<body>
+    <h1>JavaScript 变量作用域</h1>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>没有重载</title>
+    <script>
+        function f1(a, b) {
+            a = a || 0;
+            b = b || 0;
+            return a * b;
+        }
+
+        function f1(a, b) {
+            a = a || 0;
+            b = b || 0;
+            return a + b;
+        }
+
+        console.log(f1(1, 9));
+        //只加载最近的一个函数
+
+    </script>
+    
+</head>
+
+<body>
+    <h1>JavaScript 没有重载</h1>
+</body>
+
+</html>

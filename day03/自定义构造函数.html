@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>自定义构造函数</title>
+    <script>
+        //自定义构造函数
+        //new Object();调用构造函数
+        
+        function Student(name,age,sex,score){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.score = score;
+            
+            this.sayHi = function (){
+                console.log("大家好，我是"+name);
+            }
+            
+        }
+        
+        
+        //1.内存开辟空间，存储新创建的对象
+        //2.会把this设置为当前对象
+        //3.执行构造函数内部的代码
+        //4.返回新建的对象
+        var s1 = new Student("zhangsan",19,1,67);
+        var s2 = new Student("zhangsi",20,0,77);
+        s1.sayHi();
+        s2.sayHi();
+        
+        s1["name"] = "Wangwu";//对象可以用这种方式给属性赋值
+        console.log(s1["name"]);//s1["name"] 等同于 s1.name 都是键值对
+        
+//        function test(){
+//            console.log(this);
+//        }
+//        test();
+//        console.log(this);
+//        window是顶级对象.在最外层的时候this->window
+        
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript 自定义构造函数</h1>
+    <p>JavaScript中对象是无序属性的集合</p>
+    
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>循环语句</title>
+    <meta charset="utf-8">
+    <style>
+        table {
+            margin-left: 20px;
+            margin-right: 20px;
+            border: thin solid black;
+            caption-side: bottom;
+            /*    border-spacing，可以设置水平间距和垂直间距*/
+            /*    border-spacing: 垂直 水平;*/
+            /*    border-collapse: collapse 可以设置无间距*/
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+    <script>
+        //1.打印1~100
+        for (var i = 1; i <= 100; i++) {
+            console.log(i);
+        }
+        //2.打印1~100的和
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+            if (i === 100) {
+                console.log("1~100和" + sum);
+            }
+        }
+        //3.打印1~100之间所有数的和，平均值
+        var sum = 0,
+            avg;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+            if (i === 100) {
+                avg = sum / i;
+                console.log("1~100和" + sum);
+                console.log("1~100平均值" + avg);
+            }
+        }
+        //4.求1~100所有偶数和，奇数和
+        var odd = 0; //奇数
+        var even = 0; //偶数
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 === 1) {
+                odd += i;
+            } else {
+                even += i;
+            }
+        }
+        console.log("偶数和:" + even);
+        console.log("奇数和:" + odd);
+        //5.本金10000存银行,年利率3‰，五年后本金多少
+        var yourMoney = 10000;
+        var rate = 0.003;
+        for (var i = 1; i <= 5; i++) {
+            yourMoney *= (1 + 0.003);
+        }
+        console.log("五年后，你将有" + yourMoney + "元");
+        //6.兔子规律:1,1,2,3,5,8,13,21
+        var rubbitCoupleM1 = 1;
+        var rubbitCoupleM2 = 1;
+        var rubbitCouple = rubbitCoupleM1 + rubbitCoupleM2;
+        for (var i = 3; i <= 12; i++) {
+
+            rubbitCouple = rubbitCoupleM1 + rubbitCoupleM2;
+
+            console.log(i + "个月后，有" + rubbitCouple + "对兔子");
+
+            rubbitCoupleM1 = rubbitCoupleM2;
+            rubbitCoupleM2 = rubbitCouple;
+        }
+        //7.打印9*9乘法表
+        document.write("<table border='1px' cellpadding='0px' cellspacing='0px' width=100% height='400px'>");
+        for (var i = 1; i <= 9; i++) {
+            document.write("<tr>");
+            for (var j = 1; j <= i; j++) {
+                document.write("<td>");
+                document.write(i + "*" + j + "=" + (i * j));
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table");
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript for while do-while循环</h1>
+</body>
+
+</html>

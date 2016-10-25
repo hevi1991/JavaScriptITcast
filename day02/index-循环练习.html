@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>循环练习</title>
+        <script defer>
+            
+            //for循环主要用于已知循环长度
+            //while,do-while主要用于不知道循环长度
+            
+            /*
+            var userEnter = Number(prompt("请输入数字"));
+            console.log(userEnter);
+            
+            if (userEnter){
+                //以免小数
+                userEnter = parseInt(userEnter);
+                
+                var str = "";
+                
+                do{
+                    var tmp = userEnter % 10;
+                    str = str + tmp;
+                    userEnter /= 10;
+                    userEnter = parseInt(userEnter);
+                }while(userEnter != 0);
+                
+                console.log(str);
+                
+            }else if(userEnter === 0){
+                console.log("0");
+            }else{
+                console.log("GAMEOVER");
+            }
+            */
+            
+            //do-while循环
+            var answer;
+            do{
+                answer = prompt("are you fireman?(y/n)");
+            }while(answer != "y");
+            
+        </script>
+    </head>
+    <body>
+        <h1>javaScript 循环练习</h1>
+    </body>
+</html>

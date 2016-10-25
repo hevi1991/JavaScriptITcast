@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>函数的参数为复杂类型时</title>
+        <meta charset="utf-8">
+        <script>
+            //1.
+            function changeNum(num,val){
+                num = val;
+            }
+            var aNum = 10;
+            console.log(aNum);
+            changeNum(aNum,20);
+            console.log("f:"+aNum);
+            
+            //2.
+            function changeName(obj,name){
+                obj.name = name;
+            }
+            var obj = new Object();
+            obj.name = "Peter";
+            console.log(obj.name);
+            
+            changeName(obj,"梁非凡");
+            console.log("f:"+obj.name);
+            
+            
+            //3.函数的参数，是复制一份指针，然后指针若是新建了内存区域（将取消引用外部的对象的数据内存区域），则出了作用域就消失了。
+            function setNewObjectName(obj,name){
+                obj = new Object();
+                obj.name = name;
+            }
+            var obj = new Object();
+            obj.name = "Sue";
+            console.log(obj.name);
+            
+            setNewObjectName(obj,"黄钟良");
+            console.log("f:"+obj.name);
+            
+            
+            
+            
+        </script>
+    </head>
+    <body>
+        <h1>1.若是基本（简单）类型为函数的参数时，则拷贝参数，在函数内修改与函数外的实参无关</h1>
+        <h1>2.若是引用（复杂）类型为函数的参数时，则拷贝参数，在函数内修改与函数外的实参为一体，修改会相关联</h1>
+    </body>
+</html>

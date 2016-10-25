@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>DOM的概念</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>什么是DOM？</h1>
+        <p1>DOM:Document Object Model，文档树模型</p1>
+        <p>一套操作HTML和XML文档的API</p>
+        <ul>
+            <li>DOM就是把HTML视作一个层次结构（树形结构）的文档</li>
+            <li>文档（Document）：就是指HTML或者XML文件</li>
+            <li>
+                节点（Node）：HTML文档中所有内容都称为节点
+                <ul>
+                    <li>父节点 parent</li>
+                    <li>子节点 child</li>
+                    <li>兄弟节点 silbing</li>
+                </ul>
+            </li>
+            <li>元素（Element）：HTML文档中的标签可以称为元素（元素即为对象</li>
+            <li>文档元素（根元素）：文档中第一个元素，HTML文档元素就是&lt;html&gt;</li>
+        </ul>
+        
+        <div>
+            <a id="aA" href="https://www.baidu.com">BAIDU</a>
+        </div>
+        
+        
+        
+        <script>
+            //由于html和js都是从上往下读，所以script要放在最后面才能取到id的对象。
+            //对象的所有属性都能得到
+            var aA = document.getElementById("aA");
+            
+            aA.onclick = function(){
+                alert("我们才不去百度呢！");
+                return false;//取消对象原有的行为
+            }
+//            aA.onmouseover = function(){
+//                alert("去，我们去百度，别点了");
+//            }
+            var aList = document.getElementsByTagName("a");
+            console.log(aList);
+            
+            
+        </script>
+    </body>
+</html>

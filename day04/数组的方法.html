@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>数组的方法</title>
+        <meta charset="utf-8">
+        <script>
+            
+            var arr = ['a','b','c'];
+            //1.instanceof 关键字,查看谁是否是谁的对象,常用语判断参数
+            console.log(arr instanceof Array);
+            
+            function f1(arr){
+                //检测参数是否合法
+                arr = arr || [];
+                //检测arr是否是数组
+                if(!(arr instanceof Array)){
+                    //如果不是数组类型就返回，啥都不做。
+                    return;
+                }
+            }
+            
+            //2.join 和 toString 都能将转换成字符串。
+            //join带参数,可以设置间隔字符串
+            //MDN用于查字典，查不懂如何使用的函数
+            var arr2 = [1,2,5,8,21];
+            console.log(arr2.toString());
+            console.log(arr2.join("-"));
+            
+            //typeof 和 instanceof 的区别
+            //typeof 能获取任意变量的类型，遇到对象的类型时，都将返回Object
+            //instanceof 只能获取对象类型的变量，且能精准判断对象类型
+        </script>
+    </head>
+    <body>
+        <h1>数组</h1>
+        <p>数组是系统自带的对象构造器，所构造的对象</p>
+        <p>里头有很多方法</p>
+    </body>
+</html>

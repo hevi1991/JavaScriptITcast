@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>学习函数</title>
+        
+        <script src="function.js"></script>
+        <script>
+            //匿名函数
+            var f = function(){
+                console.log('hello,world');
+            };
+            //自调用函数
+            (function (){
+                console.log('hello,自调用函数');
+            })();
+            
+            console.log(getSum(1,4));
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript 学习函数</h1>
+    </body>
+</html>

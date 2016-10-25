@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>对象的字面量</title>
+        <meta charset="utf-8">
+        <script>
+//            var arr = [];//使用数组的字面量创建数组
+//            var arr = new Array();//使用构造函数创建数组
+            
+            
+//            var obj = new Object();//使用构造函数创建对象
+            var obj = {
+                name : "xiaoJiangJiang",
+                age : 29,
+                sex : 1,
+                salary : 100,
+                dog : {
+                    name : "wangcai",
+                    age : 3
+                },
+                cats : ["blueCat","redCat"],
+                sayHi : function(){
+                    console.log("我是"+this.name);
+                }
+            };//使用对象的字面量创建对象
+            
+            obj.sayHi();
+            console.log(obj);
+            
+            var obj2 = obj;//属于引用类型，共用堆的一块数据内存。
+            obj2.name = "dajiangjiang";
+            
+            console.log(obj.name);
+            console.log(obj2.name);
+            
+            
+            //JSON,JavaScript Object Notation（表示形式）描述数据的一种标准规范
+            //JSON和对象字面的区别：仅仅是属性需要用双引号引起
+            //字面量:
+            var jsonObject = {
+                "name" : "xjj",
+                "age" : 19,
+                "sex" : 1,
+            };
+            
+            //ECMAScript6中多了类的概念。5没有
+            //伪代码
+//            class Customer{
+//                //属性
+//                public String Name;
+//                public Number Money;
+//                public void Buy (String id,int num,price){
+//                    self.money = num * price;
+//                }
+//            }
+            
+            //输出对象的属性和方法
+            for(var key in obj){
+                console.log(key+":"+obj[key]);
+            }
+            
+            
+            var arr = new Array();
+            //有些系统提供的对象的属性和方法无法遍历，原因属性和方法被设置为不可遍历
+            for(var key in arr){
+                console.log(key+":"+arr[key]);
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+        <h1>对象的字面量</h1>
+    </body>
+</html>

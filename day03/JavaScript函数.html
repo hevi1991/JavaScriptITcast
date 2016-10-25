@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>函数创建方式和区别</title>
+        <script>
+            
+            /*两种方式的区别*/
+            //问题：为什么先调用，再声明函数，也可以使用?
+            func1("e","f");
+            //问题：为什么先调用，再写函数表达式，不可以使用?
+//            func2("g","h");
+            
+            /*函数声明*/
+            function func1(a,b){
+                console.log("hello func1"+a+b);
+            }
+            
+            /*函数表达式*/
+            var func2 = function (a,b){
+                console.log("hello func2"+a+b);
+            }
+            
+            func1("a","b");
+            func2("c","d");
+            
+            
+            
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript 函数的创建方式和区别</h1>
+        <div>
+            <p>第一种，函数声明</p>
+            <p>第二种，函数表达式</p>
+        </div>
+    </body>
+</html>

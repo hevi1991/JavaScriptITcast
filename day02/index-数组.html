@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>数组</title>
+    <script defer>
+        //数组 有序，可以是任意类型
+        //1.声明一个数组变量
+        //1.1使用Array函数新建(不常用)
+        var array = new Array();
+        //1.2使用语法糖(常用)
+        var array = ["zs1", "ls2", "ww3"];
+        //2.填值,改值
+        array[0] = "zs";
+        array[1] = "ls";
+        array[2] = "ww";
+
+        //利用array的length属性会改变，在数组最好一位添加元素
+        var numberArray = new Array();
+        for (var i = 0; i < 100; i++) {
+            numberArray[numberArray.length] = i;
+        }
+
+        
+    </script>
+</head>
+
+<body>
+    <h1>javaScript 数组</h1>
+</body>
+
+</html>

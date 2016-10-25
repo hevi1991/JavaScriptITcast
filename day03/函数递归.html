@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>函数递归</title>
+        <script>
+            //输入一个数，求这个数的各数字之和
+            function totolPlus(num){
+                
+                if (num < 1){
+                    return 0;
+                }
+                
+                return num%10 + totolPlus(parseInt(num/10));
+            }
+            console.log(totolPlus(1000));
+            
+            //斐波拉契数列，递归版
+            function Feibolaqi(num){
+                if (isNaN(num)||num === 0){
+                    return -1;
+                }
+                if (num === 1 || num === 2){
+                    return 1;
+                }
+                return Feibolaqi(num-2) + Feibolaqi(num-1);//求前两个数
+            }
+            console.log(Feibolaqi(21));
+            
+
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript 函数递归</h1>
+    </body>
+</html>

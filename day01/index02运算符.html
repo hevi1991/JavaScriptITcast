@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>运算符</title>
+        <meta charset="utf-8">
+        <script>
+            //运算符----------------------------
+            var n1 = 1000;
+            var n2 = "1000";
+            console.log(n1 == n2);//==，自动转换类型，然后比较
+            console.log(n1 === n2);//先比较类型是否相同，再比较
+            
+            //一元运算符练习
+            var a = 1;
+            a++;//先使用a，然后再+1
+            ++a;//先+1，然后再使用a
+            
+            //JavaScript条件运算符的判断。
+            //1.&& 一个个判断，如果全部true，则等于最后一个条件的值。哪个错误，则等于错误的值
+            var b = "abc" && "bcd" && undefined;
+            console.log(b);
+            //2.|| 一个个判断，遇到true，则返回true的值。假设都是false则返回最好一个false的值
+            var c = undefined || NaN || null || "true";
+            console.log(c);
+            //以上两种表达式，可以用这种特性，来设置默认值
+            function plus(n1,n2) {
+                n1 = n1 || 0;
+                n2 = n2 || 0;
+                var totol = n1 + n2;
+                console.log(totol);
+                return totol;
+            }
+            plus(undefined,5);
+            
+            var date = new Date();
+            console.log(date.getDay());
+            
+            
+        </script>
+    </head>
+    <body>
+        <h1>运算符，JavaScript</h1>
+    </body>
+</html>

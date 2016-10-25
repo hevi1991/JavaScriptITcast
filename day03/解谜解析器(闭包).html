@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>解析器</title>
+
+    <script src="function.js"></script>
+    <script>
+        //        function foo(x) {
+        //            var tmp = 3;
+        //
+        //            function bar(y) {
+        //                alert(x + y + (++tmp));
+        //            }
+        //            bar(10);//出了作用域之后，将不在存活，所以这个不是闭包。
+        //        }
+        //        foo(2);
+        //        foo(2);
+        
+        
+//        function foo(x) {
+//            var tmp = 3;
+//            return function(y) {//函数内部返回函数，外部这个函数变量一直存活，每次调用，tmp将加1.
+//                alert(x + y + (++tmp));
+//            }
+//        }
+//        var bar = foo(2); // bar 现在是一个闭包
+//        bar(10);
+//        bar(10);
+//        bar(10);
+//        bar(10);
+        
+        //闭包的使用
+        // 创建一个隐藏的object, 这个object持有一些数据
+        function db(){
+            var dba = {};// 从外部是不能访问这个object的
+            return function (key,val){// 创建一个函数, 这个函数提供一些访问data的数据的方法
+                return val==undefined?dba[key]:dba[key]=val;
+            };
+        }
+        // 我们可以调用这个匿名方法
+        // 返回这个内部函数，它是一个闭包
+        var d = db();
+        
+        // 我们不可能访问data这个object本身
+        // 但是我们可以设置它的成员
+        d('name','Peter');
+        console.log(d('name'));
+        console.log(d('age'));
+        d('age',19);
+        console.log(d('age'));
+        
+        //总结
+        //（1）闭包是一种设计原则，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的；
+        //（2）网上主流的对闭包剖析的文章实际上是和闭包原则反向而驰的，如果需要知道闭包细节才能用好的话，这个闭包是设计失败的；
+        //（3）尽量少学习。
+
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript 解析器工作流程</h1>
+    <ul>
+        <li>预解析</li>
+        <ul>
+            <li>先找到var，function和参数</li>
+            <li>找到var和function之后，会把var和function提前,但不赋值</li>
+        </ul>
+        <li>解析一行，执行一行</li>
+    </ul>
+</body>
+
+</html>
